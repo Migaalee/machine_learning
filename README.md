@@ -51,5 +51,46 @@ Plot Gamma Errors: Once the best gamma is found, we’ll visualize how it impact
 Compare Classifiers: Finally, we’ll compare the performance of the Naive Bayes and SVM classifiers. It’s time for these models to face off—may the best one win (in terms of accuracy, of course)!
 
 
+## DBSCAN_kmeans_bacteria_images.ipynb
+
+### Bacterial Image Clustering Project
+### Objective
+The goal of this project is to examine a set of bacterial cell images using machine learning techniques such as feature extraction, feature selection, and clustering. The objective is to assist biologists in organizing similar images, providing insight into the best way to group these images.
+
+### Dataset
+The dataset consists of 563 images of bacteria, each sized 50x50 pixels with a black background and the segmented bacterial region centered. The task involves loading the images, extracting features, selecting the most relevant features, and applying clustering algorithms to group similar images.
+
+### Key Steps:
+
+Feature Extraction:
+Three different dimensionality reduction techniques were used to extract features from the images:
+
+Principal Component Analysis (PCA): Extracted six principal components that capture the maximum variance in the data.
+t-Distributed Stochastic Neighbor Embedding (t-SNE): Reduced the dimensionality while maintaining local structure, producing six new features.
+Isometric Mapping (Isomap): Preserved the geometry of the dataset while reducing dimensions, extracting six features.
+Feature Selection:
+After feature extraction, statistical methods such as ANOVA and SelectKBest were applied to select the best subset of features. These features were further refined using:
+
+Mutual Information: Evaluated the dependency between the features and the target variable to remove redundant features.
+Clustering Algorithms:
+The project compares different clustering algorithms to find the most suitable one for grouping the bacterial images:
+
+DBSCAN: A density-based clustering algorithm that finds clusters of varying shapes by identifying dense regions in the feature space.
+K-Means: A partitioning algorithm that divides the dataset into a predefined number of clusters. The number of clusters was determined using methods like silhouette scores and the elbow method.
+Clustering Performance Evaluation:
+The performance of the clustering algorithms was assessed using various metrics:
+
+Silhouette Score: Measures how well the clusters are separated.
+Adjusted Rand Index: Evaluates how well the clustering results match the true labels.
+Parameter Tuning:
+The main parameters of each algorithm (e.g., epsilon for DBSCAN and the number of clusters for K-Means) were varied and evaluated to determine the optimal clustering settings.
+
+Visualization:
+Several visualization techniques were used to interpret the results:
+
+Scatter Matrix and Correlation Matrix: Used to identify correlations between features.
+Cluster Plots: Visualized the clusters formed by K-Means and DBSCAN.
+
+
 
 
